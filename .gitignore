@@ -1,0 +1,28 @@
+# idea
+.idea
+*.iml
+*.ipr
+*.iws
+*.properties
+
+# java
+.class
+*.war
+*.ear
+
+WebRoot/WEB-INF/classes/
+classes/
+
+# MAC
+**/.DS_Store
+
+*.pyc
+
+# gradle
+build/
+.gradle/
+src/main/resources/rebel.xml
+out
+
+*.log*
+dalgen/target/
