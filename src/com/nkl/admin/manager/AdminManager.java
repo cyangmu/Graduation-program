@@ -1,29 +1,11 @@
 package com.nkl.admin.manager;
 
+import com.nkl.admin.dao.*;
+import com.nkl.admin.domain.*;
+import com.nkl.common.util.*;
+
 import java.util.Date;
 import java.util.List;
-
-import com.nkl.admin.dao.CustomDao;
-import com.nkl.admin.dao.KindDao;
-import com.nkl.admin.dao.GoodsDao;
-import com.nkl.admin.dao.LogisticsDao;
-import com.nkl.admin.dao.OrdersDao;
-import com.nkl.admin.dao.PurchaseDao;
-import com.nkl.admin.dao.SupplierDao;
-import com.nkl.admin.dao.UsersDao;
-import com.nkl.admin.domain.Custom;
-import com.nkl.admin.domain.Kind;
-import com.nkl.admin.domain.Goods;
-import com.nkl.admin.domain.Logistics;
-import com.nkl.admin.domain.Orders;
-import com.nkl.admin.domain.Purchase;
-import com.nkl.admin.domain.Supplier;
-import com.nkl.admin.domain.Users;
-import com.nkl.common.util.DateUtil;
-import com.nkl.common.util.Md5;
-import com.nkl.common.util.Param;
-import com.nkl.common.util.StringUtil;
-import com.nkl.common.util.UID;
 
 public class AdminManager {
 	
@@ -71,7 +53,8 @@ public class AdminManager {
 	public void addUsers(Users user) {
 		//密码MD5加密
 		if (!StringUtil.isEmptyString(user.getUser_pass())) {
-			user.setUser_pass(Md5.makeMd5(user.getUser_pass()));
+//			user.setUser_pass(Md5.makeMd5(user.getUser_pass()));
+			user.setUser_pass(MD5Util.code32(user.getUser_pass(), "UTF-8"));
 		}
 		//添加用户
 		user.setUser_id(UID.getInstanse().getUID());
@@ -87,7 +70,8 @@ public class AdminManager {
 	public void updateUser(Users user) {
 		//密码MD5加密
 		if (!StringUtil.isEmptyString(user.getUser_pass())) {
-			user.setUser_pass(Md5.makeMd5(user.getUser_pass()));
+//			user.setUser_pass(Md5.makeMd5(user.getUser_pass()));
+			user.setUser_pass(MD5Util.code32(user.getUser_pass(), "UTF-8"));
 		}
 		usersDao.updateUsers(user);
 	}
@@ -385,7 +369,6 @@ public class AdminManager {
 	/**
 	 * @Title: queryPurchase
 	 * @Description: 采购订单查询
-	 * @param orders
 	 * @return Orders
 	 */
 	public Purchase queryPurchase(Purchase purchase) {

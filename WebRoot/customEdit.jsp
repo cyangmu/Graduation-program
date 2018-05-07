@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ taglib uri="/struts-tags" prefix="s" %>  
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html> 
 <head>
@@ -7,7 +7,9 @@
 <title><s:if test="#attr.custom!=null && #attr.custom.custom_id!=''">编辑</s:if><s:else>添加</s:else>客户信息信息</title>
 <link href="css/main.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <!--加入日期控件-->
 <script language="javascript" type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+
 <script language="javascript" type="text/javascript">
 $(document).ready(function(){
 	 
@@ -50,14 +52,15 @@ $(document).ready(function(){
 	
 });
 </script>
-<style type="text/css">
-</style>
+<%--<style type="text/css">--%>
+<%--</style>--%>
 </head>
 <body>
 <div class="pageTitle">
 	&nbsp;&nbsp;<img src="images/right1.gif" valign="middle" /> &nbsp;<span id="MainTitle" style="">客户信息管理&gt;&gt;<s:if test="#attr.custom!=null && #attr.custom.custom_id!=''">编辑</s:if><s:else>添加</s:else>客户信息</span>
 </div>
-<form id="info" name="info" action="Admin_addCustom.action" method="post">   
+
+<form id="info" name="info" action="Admin_addCustom.action" method="post">
 <s:hidden id="paramsCustom.custom_id" name="paramsCustom.custom_id" value="%{#attr.custom.custom_id}" /> 
 <table width="800" align="center" cellpadding="0" cellspacing="0" style="margin-top:10px;margin-bottom:10px;">
   <tr> 
@@ -130,5 +133,6 @@ $(document).ready(function(){
    </tr>
 </table>
 </form>
+
 </body>
 </html>

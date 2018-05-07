@@ -22,12 +22,13 @@ public class LoginAction  extends BaseAction {
 	public String InSystem(){
 		try {
 			//验证码验证
-			String random = (String)Param.getSession("random");
+			String random = (String) Param.getSession("random");
+			if (random == "" && random != null) {
 			if (!random.equals(params.getRandom())) {
-				tip="验证码错误";
+				tip = "验证码错误";
 				return "error";
 			}
-			
+			}
 			//用户登录查询
 			Users admin = loginManager.getUsers(params);
 			if (admin!=null) {

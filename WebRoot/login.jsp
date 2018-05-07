@@ -100,6 +100,7 @@
 </DIV>
 </DIV>
 </FORM>
+
 <script language="javascript" type="text/javascript">
 	//实现验证码点击刷新
 	function reloadcode(){
@@ -129,6 +130,8 @@
 			 
 		});
 	});
+
 </script>
+
 </BODY>
 </HTML>

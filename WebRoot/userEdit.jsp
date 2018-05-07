@@ -18,7 +18,7 @@ $(document).ready(function(){
 	 }
 	 
 	 var num = /^\d+$/;
-	 var email=/^[\w]+[@]\w+[.][\w]+$/;
+	 var email=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
      var Phone=/^\d{11}$/;
 	 $("#addBtn").bind('click',function(){
 		if($("#paramsUsers\\.user_name").val()==''){
@@ -55,7 +55,7 @@ $(document).ready(function(){
 			alert('姓名不能为空');
 			return;
 		}
-		if($("#paramsUsers\\.user_mail").val()!='' && !email.exec($("#paramsUsers\\. ").val())){
+		if($("#paramsUsers\\.user_mail").val()!='' && !email.exec($("#paramsUsers\\.user_mail").val())){
 			alert('邮箱格式不正确');
 			return;
 		}
@@ -69,13 +69,18 @@ $(document).ready(function(){
 	
 });
 </script>
+
 <style type="text/css">
 </style>
+
 </head>
+
 <body>
+
 <div class="pageTitle">
 	&nbsp;&nbsp;<img src="images/right1.gif" valign="middle" /> &nbsp;<span id="MainTitle" style=""><s:property value="#attr.user_typeDesc"/>管理&gt;&gt;<s:if test="#attr.user!=null && #attr.user.user_id!=''">编辑</s:if><s:else>添加</s:else><s:property value="#attr.user_typeDesc"/></span>
 </div>
+
 <form id="info" name="info" action="Admin_addUsers.action" method="post">   
 <s:hidden id="paramsUsers.user_id" name="paramsUsers.user_id" value="%{#attr.user.user_id}" /> 
 <s:hidden name="paramsUsers.user_type" value="%{#attr.user_type}"/>
@@ -104,12 +109,13 @@ $(document).ready(function(){
           	<s:else><s:textfield name="paramsUsers.user_name" id="paramsUsers.user_name" value="%{#attr.user.user_name}"/> </s:else>
           </td>
           <td align="right" style="padding-right:5px"><font color="red">*</font> 密码：</td>
+
           <td>
             <s:if test="#attr.user!=null && #attr.user.user_id!=''">
           	<s:password name="paramsUsers.user_pass" id="paramsUsers.user_pass" value=""  showPassword="true"/>
           	</s:if>
           	<s:else>
-          	<s:password name="paramsUsers.user_pass" id="paramsUsers.user_pass" value="111111"  showPassword="true"/>
+          	<s:password name="paramsUsers.user_pass" value="111111"  showPassword="true"/>
           	<span id="passTip" style="color:red;">初始密码：111111</span>
           	</s:else>
           </td>

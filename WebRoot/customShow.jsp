@@ -8,6 +8,7 @@
 <title>客户信息信息</title>
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+
 <script type="text/javascript">
 var tempClassName="";
 function tr_mouseover(obj) 
@@ -89,11 +90,14 @@ function ChangePage(pagenum)
 </script>
 </head>
 <body>
+
 <div class="pageTitle">
 	&nbsp;&nbsp;<img src="images/right1.gif" valign="middle" /> &nbsp;<span id="MainTitle" style="">客户信息管理&gt;&gt;客户信息查询</span>
 </div>
+
 <form name="info" id="info" action="Admin_listCustoms.action" method="post">
 <input type="hidden" name="pageNo" id="pageNo" value="${pageNo}"/>
+
 <table width="95%" align="center" cellpadding="0" cellspacing="0">
   <tr><td colspan="2" height="10px">&nbsp;</td></tr>
   <tr>
@@ -107,6 +111,7 @@ function ChangePage(pagenum)
   </tr>
   <tr><td colspan="2" height="2px"></td></tr>  
 </table>
+
 <table width="95%" align="center" class="table_list" cellpadding="0" cellspacing="0">
    <tr class="listtitle">
      <td width="40" align="center"><input type="checkbox" onclick="CheckAll(this);" style="vertical-align:text-bottom;" title="全选/取消全选"/></td>
@@ -141,6 +146,7 @@ function ChangePage(pagenum)
    </s:else>
    
 </table>
+
 <jsp:include page="page.jsp"></jsp:include>
 </form> 
 </body>

@@ -11,8 +11,10 @@
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">  
 <script src="js/prototype.lite.js" type="text/javascript"></script>
+	<!--超级轻量级的JavaScript的特效库，用来显示折叠菜单-->
 <script src="js/moo.fx.js" type="text/javascript"></script>
 <script src="js/moo.fx.pack.js" type="text/javascript"></script>
+
 <style type="text/css">
 .left{width:190px; height:280px; background-color:#EEF2FB}
 table tr td{ font-size:12px; font-family:Arial, Helvetica, sans-serif;}

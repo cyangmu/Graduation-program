@@ -8,14 +8,8 @@
 <link href="css/main.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script language="javascript" type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
-<script language="javascript" type="text/javascript">
-$(document).ready(function(){
- 
-	
-});
-</script>
-<style type="text/css">
-</style>
+
+
 </head>
 <body>
 <div class="pageTitle">
